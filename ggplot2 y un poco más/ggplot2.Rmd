@@ -1,0 +1,41 @@
+---
+title: "ggplot2"
+author: "Manuel Cano Saucedo"
+date: "2022-11-06"
+output: pdf_document
+---
+Antes que todo aprenderemos a como instalar librerias y herramientas que nos ayudaran al analisis y visualizacón de los datos. 
+
+Para comenzar a analizar y visualizar datos necesitamos los datos, por lo que comenzaremos a descargar una base de datos del repositorio de CRAN llamado "mdsr".
+
+```{r}
+#install.packages("mdsr")   <---- quitar el simbolo de # para ejecutarlo en R
+```
+Parece que el repositorio ha sido removido de CRAN, por lo que tocara instalarlo de otra manera, esta otra forma es desde los repositorios de GitHub. 
+
+```{r}
+#install.packages("devtools")
+```
+y lo cargamos de la siguiente manera
+
+```{r}
+#library(devtools)
+```
+```{r}
+#devtools::install_github("cran/mdsr")
+```
+y cargamos nuestro el repositorio mdsr
+
+```{r}
+library(mdsr)
+```
+
+y ahora sí, ya no nos dio ningun error. 
+
+Ahora, cargaremos nuestra una base de datos llamada CIACountries
+
+```{r}
+data<-CIACountries
+
+```
+
