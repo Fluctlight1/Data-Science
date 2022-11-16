@@ -11,6 +11,7 @@ library(mdsr)
 library(ggplot2)
 
 getwd()
+setwd("C:/Users/aethe/Documents/GitHub/Data-Science/Datasets")
 read.csv
 
 ?CIACountries
@@ -84,10 +85,10 @@ g+geom_point(aes( color=net_users, size=roadways))+
 #3.1.4 Facets
 g+geom_point(alpha=0.9,aes(size=roadaways))+
   coord_trans(y="log10")+
-  facet_wrap(∼net_users, nrow=1)+
+  facet_wrap(~net_users, nrow=1)+
   theme(legend.position = "top")
 
-#Media de GDP por categoría de net_users 
+#Media de GDP por categor�a de net_users 
 CIACountries %>% group_by(net_users) %>% summarise(mean(gdp))
 CIACountries %>% group_by(net_users) %>% summarise(median(gdp))
 
@@ -100,13 +101,15 @@ names(MedicareCharges)
 View(MedicareCharges)
 nrow(MedicareCharges)
 table(MedicareCharges$stateProvider)
-base_medi<-MedicareCharges
+medi<-MedicareCharges
 
 table(MedicareCharges$drg)
 
 #Usamos filter para seleccionar datos (sub-base)
 ChargesNJ<-MedicareCharges %>%
   filter(stateProvider == "NJ")
+
+view(ChargesN)
 
 p<-ggplot( data=ChargesNJ, aes(x=drg, y=mean_charge))+
   geom_col(fill="gray")+
@@ -154,4 +157,4 @@ names(SAT_2010)
 gg<-gg %+% SAT_2010 #>+> para incluir la nueva variable en las graficas
 gg+aes(color=SAT_rate)
 
-gg+facet_wrap(∼SAT_rate)+geom_point()
+gg+facet_wrap(~SAT_rate)+geom_point()

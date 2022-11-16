@@ -25,9 +25,9 @@ concentrado
 
 #Explorar la muestra (sin ponderadores)
 #tablas de frecuencia
-tama√±o_loc_freq<-table(concentrado$tam_loc)
-tama√±o_loc_freq
-prop.table(tama√±o_loc_freq)
+tamaÒo_loc_freq<-table(concentrado$tam_loc)
+tamaÒo_loc_freq
+prop.table(tamaÒo_loc_freq)
 install.packages("summarytools")
 library(summarytools)
 freq(concentrado$tam_loc)
